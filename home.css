@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #0a2263;
+    color: #fff;
+    padding: 20px;
+}
+
+.logo{
+    margin: 10px;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.about {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.job-listings {
+    padding: 50px 0;
+}
+
+.job-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.contact {
+    padding: 50px 0;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #0a2263;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #0a2263;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}

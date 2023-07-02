@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNC Candidate Search</title>
+    <link rel="stylesheet" href="next.css">
+    <script src="next.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>MNC Candidate Search</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Search</a></li>
+                <li><a href="#">Post Job</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="search">
+        <div class="container">
+            <h2>Find Your Ideal Candidate</h2>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Job Title">
+                <input type="text" placeholder="Location"><br>
+                <button type="submit" class="btn">Search</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="results">
+        <div class="container">
+            <h2>Search Results</h2>
+            <div id="candidates">
+                <!-- Candidates will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 MNC Candidate Search. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="next.js"></script>
+    <script>
+        const candidatesContainer = document.getElementById('candidates');
+
+        // Function to display candidate data
+        function displayCandidates(candidates) {
+            candidatesContainer.innerHTML = '';
+
+            if (candidates.length === 0) {
+                candidatesContainer.innerHTML = '<p>No candidates found.</p>';
+                return;
+            }
+
+            candidates.forEach(candidate => {
+                const candidateCard = document.createElement('div');
+                candidateCard.classList.add('candidate-card');
+
+                const name = document.createElement('h3');
+                name.textContent = candidate.name;
+
+                const jobTitle = document.createElement('p');
+                jobTitle.textContent = 'Job Title: ' + candidate.jobTitle;
+
+                const location = document.createElement('p');
+                location.textContent = 'Location: ' + candidate.location;
+
+                candidateCard.appendChild(name);
+                candidateCard.appendChild(jobTitle);
+                candidateCard.appendChild(location);
+
+                candidatesContainer.appendChild(candidateCard);
+            });
+        }
+
+        // Event listener for search form submission
+        const searchForm = document.querySelector('form');
+        searchForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const jobTitleInput = document.querySelector('input[placeholder="Job Title"]');
+            const locationInput = document.querySelector('input[placeholder="Location"]');
+
+            const jobTitle = jobTitleInput.value.trim().toLowerCase();
+            const location = locationInput.value.trim().toLowerCase();
+
+            const filteredCandidates = candidates.filter(candidate => {
+                const candidateJobTitle = candidate.jobTitle.toLowerCase();
+                const candidateLocation = candidate.location.toLowerCase();
+
+                return (
+                    (jobTitle === '' || candidateJobTitle.includes(jobTitle)) &&
+                    (location === '' || candidateLocation.includes(location))
+                );
+            });
+
+            displayCandidates(filteredCandidates);
+        });
+    </script>
+</body>
+
+</html>

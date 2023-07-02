@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(177, 177, 236);
+}
+
+header {
+    background-color: #0a2263;
+    color: #fff;
+    padding: 20px;
+    height: 100px;
+
+}
+
+.logo{
+    margin-left: 10px;
+    padding: 10px;
+
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+    margin-left: 15px;
+    padding: 5px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links a:hover{
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 960px;
+    margin: 20px ;
+    /* padding: 0 20px; */
+    margin-left: 30px;
+}
+
+.container h2 {
+    margin-bottom: 15px;
+}
+
+.container input{
+    height: 25px;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    background-color: rgb(206, 225, 252);
+}
+
+.container button{
+    height: 25px;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    font-size: 0.9rem;
+    background-color: rgb(178, 191, 211);
+}
+
+.container button:hover{
+    background-color: #7078e6;
+    cursor: pointer;
+}
+
+.search {
+    padding: 30px 0;
+}
+
+.results {
+    padding-bottom: 70px;
+}
+
+.candidate-card {
+    background-color: #7078e6;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #0a2263;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    margin-top: 30px;
+    height: 140px;
+}
